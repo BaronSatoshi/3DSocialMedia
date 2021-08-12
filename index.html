@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://use.fontawesome.com/3dfd196d26.js"></script>
+    <title>3D Rede social</title>
+</head>
+<body>
+    <section class="socialMedia">
+        <ul class="sci">
+            <li data-text="Facebook" data-color="#1877f2">
+                <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </li>
+            <li data-text="Youtube" data-color="#ff0000">
+                <a href="#" class="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            </li>
+            <li data-text="Twitter" data-color="#0099ff">
+                <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </li>
+            <li data-text="Instagram" data-color="#e4405f">
+                <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+</section>
+<script src="vanilla-tilt.min.js"></script>
+<script>
+        let list = document.querySelectorAll('.sci li');
+        let bg = document.querySelector('.socialMedia');
+        list.forEach(elemnts => {
+            elemnts.addEventListener('mouseenter', function(event){
+                let color = event.target.getAttribute('data-color');
+                bg.style.backgroundColor = color;
+            })
+
+            elemnts.addEventListener('mouseleave', function(event){
+                bg.style.backgroundColor = '#fff';
+            })
+
+        })
+
+        VanillaTilt.init(document.querySelectorAll(".sci li a"), {
+            max: 30,
+            speed: 400,
+            glare:true,
+            "max-glare": 1,
+        });
+    </script>
+</body>
+</html>
